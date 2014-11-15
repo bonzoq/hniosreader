@@ -1,37 +1,22 @@
-Hacker News API-Based iOS Reader
+Hacker News Client 
 ===========
 
-Why another HN client? Live updates with minimum overhead have become possible with the introduction of the new API. Also, existent clients focused more on exact data scraping rather then user experience. It's time to change that and build a HN reader we all deserve.
+This app has been submitted to AppStore and currently its status is "Waiting for Review".
 
-This app utilizes Firebase iOS SDK https://www.firebase.com/docs/ios/quickstart.html, which allows for real-time content updates. However, as those updates could be too frequent, top 100 stories are downloaded just once. To get the latest 100 stories, pull to refresh. 
+This is probably the first iOS Hacker News client that uses the newly introduced official Firebase Hacker News API. One of the cool features of the new API are updates pushed in real time. The app refreshes the number of points and the number of comments for each story automatically. If you want to reaload the stories completely, simply pull to refresh. Reloading stories does not happen automatically, since it could be annoying if the order of stories changed while the user is browsing them. 
 
-Number of comments and votes should change in real-time (to be done).
+What also distinguishes this app is its fresh look and feel. It feels like a proper iOS 8 app. It makes use of iOS 8 self-sizing tableview cells. You can adjust the comments' font size by going to iOS's Settings -> General -> Accessibility -> Larger Text and dragging the slider. 
 
-Currently these two endpoints have been implemented:
+Hacker News Client is completely open source. Feel free to contribute. 
 
-https://hacker-news.firebaseio.com/v0/topstories
-
-and 
-
-https://hacker-news.firebaseio.com/v0/item/.
-
-To-do list:
-
-1. Live updates of the number of comments and the score for each story.
-2. Twitter or facebook style information that the top 100 stories have changed. User can then pull to refresh.
-3. Tableview with comments. 
-4. Displaying user profiles.
-
-Feel free to contribute. Fork and submit a pull request. Since getting data has become straight-forward, usability and great user experience should be the priority now. Hopefully, with your help a free state-of-the-art app will become available for the benefit of this great community. 
-
-![alt tag](https://raw.github.com/bonzoq/hniosreader/master/preview.png)
+Don't forget to install pods once you clone the code. 
 
 License
 ===========
 
 The MIT License (MIT)
 
-Copyright (c) 2014 HNiOSreader
+Copyright (c) 2014 Marcin Kmiec
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
