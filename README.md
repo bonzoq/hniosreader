@@ -1,7 +1,7 @@
 Hacker News Client 
 ===========
 
-This app has been submitted to AppStore and currently its status is "Waiting for Review".
+This app is now available at Appstore at https://itunes.apple.com/us/app/hacker-news-client/id939454231?mt=8&uo=4.
 
 This is probably the first iOS Hacker News client that uses the newly introduced official Firebase Hacker News API. One of the cool features of the new API are updates pushed in real time. The app refreshes the number of points and the number of comments for each story automatically. If you want to reaload the stories completely, simply pull to refresh. Reloading stories does not happen automatically, since it could be annoying if the order of stories changed while the user is browsing them. 
 
