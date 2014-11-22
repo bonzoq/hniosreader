@@ -3,7 +3,7 @@ Hacker News Client
 
 This app is now available on Appstore at https://itunes.apple.com/us/app/hacker-news-client/id939454231?mt=8&uo=4.
 
-This is probably the first iOS Hacker News client that uses the newly introduced official Firebase Hacker News API. One of the cool features of the new API are updates pushed in real time. The app refreshes the number of points and the number of comments for each story automatically. If you want to reaload the stories completely, simply pull to refresh. Reloading stories does not happen automatically, since it could be annoying if the order of stories changed while the user is browsing them. 
+This is probably the first iOS Hacker News client that uses the newly introduced official Firebase Hacker News API. One of the cool features of the new API are updates pushed in real time. The app refreshes the number of points and the number of comments for each story automatically. If you want to reload the stories completely, simply pull to refresh. Reloading stories does not happen automatically, since it could be annoying if the order of stories changed while the user is browsing them. 
 
 What also distinguishes this app is its fresh look and feel. It feels like a proper iOS 8 app. It makes use of iOS 8 self-sizing tableview cells. You can adjust the comments' font size by going to iOS's Settings -> General -> Accessibility -> Larger Text and dragging the slider. 
 
