@@ -32,6 +32,8 @@
 
 - (void)loadStoriesLimitedTo:(NSInteger)limit{
     
+    [Utils loadReadList];
+    
     self.firebaseRefs = [NSMutableArray new];
     
     [self startActivityIndicator];
