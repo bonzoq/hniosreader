@@ -13,4 +13,9 @@
 + (NSString *)timeAgoFromTimestamp:(NSNumber *)timestamp;
 + (NSString *)makeThisPieceOfHTMLBeautiful: (NSString *)htmlString withFont:(NSString *)fontName ofSize:(int)size;
 + (NSAttributedString *)convertHTMLToAttributedString:(NSString *)string;
+
++ (NSURL *)applicationDocumentsDirectory;
++ (void) loadReadList;
++ (BOOL) wasRead:(int) identification;
++ (void) read:(int) identification;
 @end

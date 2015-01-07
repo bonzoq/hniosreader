@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "NSString+RemoveTag.h"
 
+static NSMutableArray *readList;
+
 @implementation Utils
 
 + (NSString *)timeAgoFromTimestamp:(NSNumber *)timestamp{
@@ -237,4 +239,39 @@
     return string;
 }
 
++ (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+                                                   inDomains:NSUserDomainMask] lastObject];
+}
+
++ (void) loadReadList{
+    NSString *pa = [[Utils applicationDocumentsDirectory].path
+                      stringByAppendingPathComponent:@"wasread.dat"];
+    readList = [NSMutableArray arrayWithContentsOfFile:pa];
+    if(!readList)
+        readList = [[NSMutableArray alloc]init];
+}
+
++ (BOOL) wasRead:(int) identification{
+    if(readList){
+        for(int i=0; i<[readList count]; i++){
+            if ([[readList objectAtIndex:i] isEqualToNumber:[NSNumber numberWithInt:identification]])
+                return true;
+        }
+    }
+    return false;
+}
+
++ (void) read:(int)identification{
+    NSLog(@"%d", identification);
+    NSString *pa = [[Utils applicationDocumentsDirectory].path
+                    stringByAppendingPathComponent:@"wasread.dat"];
+    
+    if(![Utils wasRead:identification]){
+        if(readList){
+            [readList addObject:[NSNumber numberWithInt:identification]];
+            [readList writeToFile:pa atomically:YES];
+        }
+    }
+}
 @end

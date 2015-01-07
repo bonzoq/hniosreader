@@ -234,6 +234,9 @@
         
         NSDictionary *storyDescription = [self.storyDescriptions objectForKey:itemNumber];
         
+        //add itemNumber to read list
+        [Utils read: [itemNumber intValue]];
+        
         viewController.storyTitle = [storyDescription objectForKey:@"title"];
         viewController.url = [storyDescription objectForKey:@"url"];
         viewController.commentIDs = [storyDescription objectForKey:@"kids"];
@@ -308,7 +311,11 @@
     
     NSDictionary *storyDescription = [self.storyDescriptions objectForKey:itemNumber];
     
-    cell.titleView.text = [storyDescription objectForKey:@"title"];
+    cell.titleView.textColor = [UIColor darkTextColor];
+    
+    cell.titleView.text = [storyDescription objectForKey:@"title"]; //set diff col if was read
+    if([Utils wasRead:[self.top100StoriesIds[index] intValue]])
+        cell.titleView.textColor = [UIColor grayColor];
     
     cell.pointsLabel.text = [NSString stringWithFormat:@"%@ points", [storyDescription objectForKey:@"score"]];
     
@@ -385,6 +392,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [Utils read:[[self.top100StoriesIds objectAtIndex:[indexPath item]] intValue]];
     self.selectedRow = indexPath;
     [self showWebViewAtIndexPath:indexPath];
 }

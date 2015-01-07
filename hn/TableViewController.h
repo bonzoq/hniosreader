@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Utils.h"
 
 @interface TableViewController : UIViewController
 
