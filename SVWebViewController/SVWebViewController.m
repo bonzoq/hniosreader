@@ -12,7 +12,7 @@
 #import "NJKWebViewProgressView.h"
 #import "NJKWebViewProgress.h"
 
-@interface SVWebViewController () <UIWebViewDelegate, UIScrollViewDelegate, NJKWebViewProgressDelegate, UIGestureRecognizerDelegate>
+@interface SVWebViewController () <UIWebViewDelegate, UIScrollViewDelegate, NJKWebViewProgressDelegate>
 
 @property (nonatomic, strong) UIBarButtonItem *backBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *forwardBarButtonItem;
@@ -69,7 +69,7 @@
     [self loadRequest:self.request];
     
     UIView *statusBarBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
-    [statusBarBackground setBackgroundColor:[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1.0]];
+    [statusBarBackground setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:statusBarBackground];
     
     
