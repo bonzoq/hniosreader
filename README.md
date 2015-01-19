@@ -11,6 +11,18 @@ Hacker News Client is completely open source. Feel free to contribute.
 
 Don't forget to install pods once you clone the code. 
 
+Contributing
+===========
+
+Your ideas for improving this app are greatly appreciated. The best way to contribute is by submitting a pull request. I'll do my best to respond to you as soon as possible. You can also submit a new Github issue if you find bugs or have questions. 
+
+To-do list as of 19 Jan 2015:
+
+1. An app extension in the Today view (Today widget). https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/NotificationCenter.html#//apple_ref/doc/uid/TP40014214-CH11-SW1
+2. Side menu using *PKRevealController*.
+3. Selectable dark theme for reading at night. 
+4. Extending user profile with user's stories, polls and comments.
+
 License
 ===========
 

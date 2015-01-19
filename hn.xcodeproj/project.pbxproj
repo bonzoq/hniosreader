@@ -11,6 +11,10 @@
 		B80ACBA01A59FAA3007DC58C /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = B80ACB9F1A59FAA3007DC58C /* Story.m */; };
 		B80FB6D119E988F800CE7A21 /* PrepareCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80FB6D019E988F800CE7A21 /* PrepareCommentsViewController.m */; };
 		B83E26C51A03F65200B14C30 /* ProfileViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B83E26C41A03F65200B14C30 /* ProfileViewCell.m */; };
+		B8464F4A1A6D77FD000D1C80 /* backArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B8464F461A6D77FD000D1C80 /* backArrow.png */; };
+		B8464F4B1A6D77FD000D1C80 /* backArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8464F471A6D77FD000D1C80 /* backArrow@2x.png */; };
+		B8464F4C1A6D77FD000D1C80 /* backArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8464F481A6D77FD000D1C80 /* backArrow@3x.png */; };
+		B8464F4D1A6D77FD000D1C80 /* backArrowLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = B8464F491A6D77FD000D1C80 /* backArrowLarge.png */; };
 		B855F11E1A0E5881006014AD /* ReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B855F11D1A0E5881006014AD /* ReachabilityManager.m */; };
 		B866190E1A0517530064976C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B866190D1A0517530064976C /* Reachability.m */; };
 		B87E256719F6D2F4000773A2 /* PrepareProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B87E256619F6D2F4000773A2 /* PrepareProfileViewController.m */; };
@@ -93,6 +97,10 @@
 		B80FB6D019E988F800CE7A21 /* PrepareCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrepareCommentsViewController.m; path = "View Controllers/PrepareCommentsViewController.m"; sourceTree = "<group>"; };
 		B83E26C31A03F65200B14C30 /* ProfileViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewCell.h; path = Views/ProfileViewCell.h; sourceTree = "<group>"; };
 		B83E26C41A03F65200B14C30 /* ProfileViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewCell.m; path = Views/ProfileViewCell.m; sourceTree = "<group>"; };
+		B8464F461A6D77FD000D1C80 /* backArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrow.png; sourceTree = "<group>"; };
+		B8464F471A6D77FD000D1C80 /* backArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backArrow@2x.png"; sourceTree = "<group>"; };
+		B8464F481A6D77FD000D1C80 /* backArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backArrow@3x.png"; sourceTree = "<group>"; };
+		B8464F491A6D77FD000D1C80 /* backArrowLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrowLarge.png; sourceTree = "<group>"; };
 		B855F11C1A0E5881006014AD /* ReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReachabilityManager.h; path = Utils/Reachability/ReachabilityManager.h; sourceTree = "<group>"; };
 		B855F11D1A0E5881006014AD /* ReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReachabilityManager.m; path = Utils/Reachability/ReachabilityManager.m; sourceTree = "<group>"; };
 		B866190C1A0517530064976C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Utils/Reachability/Reachability.h; sourceTree = "<group>"; };
@@ -105,10 +113,10 @@
 		B8929A3919E7201900DCA903 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentsViewController.m; path = "View Controllers/CommentsViewController.m"; sourceTree = "<group>"; };
 		B89878C119EDAAB200F78332 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+Extension.h"; path = "Views/UIButton+Extension.h"; sourceTree = "<group>"; };
 		B89878C219EDAAB200F78332 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Extension.m"; path = "Views/UIButton+Extension.m"; sourceTree = "<group>"; };
-		B8A35B991A01369C00140CD8 /* backButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton2.png; sourceTree = "<group>"; };
-		B8A35B9A1A01369C00140CD8 /* backButton2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton2@2x.png"; sourceTree = "<group>"; };
-		B8A35B9B1A01369C00140CD8 /* backButton2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton2@3x.png"; sourceTree = "<group>"; };
-		B8A35B9C1A01369C00140CD8 /* backButton2Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton2Large.png; sourceTree = "<group>"; };
+		B8A35B991A01369C00140CD8 /* backButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backButton2.png; path = ../Assets/BackButton2/backButton2.png; sourceTree = "<group>"; };
+		B8A35B9A1A01369C00140CD8 /* backButton2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backButton2@2x.png"; path = "../Assets/BackButton2/backButton2@2x.png"; sourceTree = "<group>"; };
+		B8A35B9B1A01369C00140CD8 /* backButton2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backButton2@3x.png"; path = "../Assets/BackButton2/backButton2@3x.png"; sourceTree = "<group>"; };
+		B8A35B9C1A01369C00140CD8 /* backButton2Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backButton2Large.png; path = ../Assets/BackButton2/backButton2Large.png; sourceTree = "<group>"; };
 		B8A35BA41A01AB8300140CD8 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Utils/Utils.h; sourceTree = "<group>"; };
 		B8A35BA51A01AB8300140CD8 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Utils/Utils.m; sourceTree = "<group>"; };
 		B8B0312E1A04F53200B6B0AE /* PrepareStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrepareStoriesViewController.h; path = "View Controllers/PrepareStoriesViewController.h"; sourceTree = "<group>"; };
@@ -251,6 +259,18 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
+		B8464F451A6D77FD000D1C80 /* Back Arrow */ = {
+			isa = PBXGroup;
+			children = (
+				B8464F461A6D77FD000D1C80 /* backArrow.png */,
+				B8464F471A6D77FD000D1C80 /* backArrow@2x.png */,
+				B8464F481A6D77FD000D1C80 /* backArrow@3x.png */,
+				B8464F491A6D77FD000D1C80 /* backArrowLarge.png */,
+			);
+			name = "Back Arrow";
+			path = "Assets/Back Arrow";
+			sourceTree = "<group>";
+		};
 		B855F0DE1A0E2839006014AD /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +334,7 @@
 		B8C25C9019E70D3300A0BE8E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B8464F451A6D77FD000D1C80 /* Back Arrow */,
 				B855F0DE1A0E2839006014AD /* Icons */,
 				B8A35B981A01369C00140CD8 /* BackButton2 */,
 			);
@@ -567,9 +588,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35334B219E546D80060B70D /* Main.storyboard in Resources */,
+				B8464F4B1A6D77FD000D1C80 /* backArrow@2x.png in Resources */,
 				D3FA71E21A6D2F0D0072DC4A /* Icon-40.png in Resources */,
 				B8A35B9D1A01369C00140CD8 /* backButton2.png in Resources */,
 				D3FA71E31A6D2F0D0072DC4A /* Icon-40@2x.png in Resources */,
+				B8464F4C1A6D77FD000D1C80 /* backArrow@3x.png in Resources */,
 				D3FD0DCC19E5732E00DE43E5 /* SVWebViewController.strings in Resources */,
 				D353349819E544DF0060B70D /* LaunchScreen.xib in Resources */,
 				D3FD0DD019E5732E00DE43E5 /* SVWebViewControllerActivityChrome-iPad.png in Resources */,
@@ -581,12 +604,14 @@
 				D3FA71E51A6D2F0D0072DC4A /* Icon-60@2x.png in Resources */,
 				B8A35BA01A01369C00140CD8 /* backButton2Large.png in Resources */,
 				D3FA71EB1A6D2F0D0072DC4A /* Icon-Small@3x.png in Resources */,
+				B8464F4A1A6D77FD000D1C80 /* backArrow.png in Resources */,
 				D3FA71E11A6D2F0D0072DC4A /* hnIconThin6.png in Resources */,
 				D3FD0DD119E5732E00DE43E5 /* SVWebViewControllerActivityChrome-iPad@2x.png in Resources */,
 				D3FD0DCE19E5732E00DE43E5 /* SVWebViewController.bundle in Resources */,
 				D3FD0DD319E5732E00DE43E5 /* SVWebViewControllerActivityChrome@2x.png in Resources */,
 				D3FA71E81A6D2F0D0072DC4A /* Icon-76@2x.png in Resources */,
 				D3FA71E71A6D2F0D0072DC4A /* Icon-76.png in Resources */,
+				B8464F4D1A6D77FD000D1C80 /* backArrowLarge.png in Resources */,
 				D353349519E544DF0060B70D /* Images.xcassets in Resources */,
 				D3FA71E61A6D2F0D0072DC4A /* Icon-60@3x.png in Resources */,
 				D3FD0DD419E5732E00DE43E5 /* SVWebViewControllerActivitySafari-iPad.png in Resources */,
