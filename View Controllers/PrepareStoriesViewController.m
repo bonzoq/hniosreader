@@ -10,6 +10,7 @@
 #import <Firebase/Firebase.h>
 #import "TableViewController.h"
 #import "ReachabilityManager.h"
+#import "CustomRevealViewController.h"
 
 @interface PrepareStoriesViewController ()
 
@@ -179,14 +180,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"storiesViewController"]){
-        TableViewController *viewController = (TableViewController *)segue.destinationViewController;
+        CustomRevealViewController *viewController = (CustomRevealViewController *)segue.destinationViewController;
         viewController.top100StoriesIds = [self.top100StoriesIds mutableCopy];
         viewController.storyDescriptions = self.storyDescriptions;
     }
 }
-
-
-
 
 #pragma mark - Utils
 

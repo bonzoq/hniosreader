@@ -22,6 +22,7 @@
 
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) NSURLRequest *request;
+
 @property (nonatomic, strong) UIButton *backButton;
 
 @property CGFloat lastOffsetY;
@@ -103,6 +104,8 @@
 - (void)viewDidLoad {
     
 	[super viewDidLoad];
+    
+     [[self navigationController] setNavigationBarHidden:YES animated:NO];
     
     [self prefersStatusBarHidden];
     [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];

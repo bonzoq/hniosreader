@@ -20,7 +20,6 @@
 @property CGFloat aboutWebviewHeight;
 @property CGFloat lastOffsetY;
 
-
 @end
 
 @implementation ProfileViewController

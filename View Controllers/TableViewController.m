@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import <Firebase/Firebase.h>
 #import "SVWebViewController.h"
+#import "SVModalWebViewController.h"
 #import "HNTableViewCell.h"
 #import "NSString+ExtractDomain.h"
 #import "PrepareCommentsViewController.h"
@@ -20,8 +21,12 @@
 #import "ReachabilityManager.h"
 #import "Appirater.h"
 #import "DataStore.h"
+#import "SWRevealViewController.h"
+#import "UIButton+Extension.h"
+#import "MBProgressHUD.h"
+#import "MenuViewController.h"
 
-@interface TableViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface TableViewController () <UITableViewDataSource, UITableViewDelegate, SWRevealViewControllerDelegate>
 
 @property NSIndexPath *selectedRow;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -35,6 +40,15 @@
 @property BOOL storiesHaveBeenReloaded;
 @property NSMutableDictionary *commentNumberViews;
 @property BOOL doNotDeselectCell;
+@property UIButton *menuButton;
+@property CGFloat lastOffsetY;
+
+@property NSString *storiesURL;
+@property NSTimer *timer;
+
+@property UIAlertView *alertView;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -44,7 +58,7 @@
 
 - (void)getNewStoryIDs{
     
-    Firebase *storiesIdEvent = [[Firebase alloc] initWithUrl:@"https://hacker-news.firebaseio.com/v0/topstories"];
+    Firebase *storiesIdEvent = [[Firebase alloc] initWithUrl:self.storiesURL];
     
     [storiesIdEvent observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
             self.temporaryTop100StoriesIds = [snapshot.value mutableCopy];
@@ -71,11 +85,16 @@
             [[DataStore sharedManager] saveStoryIfNotExistsWithId:itemNumber];
             
             if(usingNewIDs == NO){
+                
                 [self.storyDescriptions setObject:responseDictionary forKey:itemNumber];
                 
-                [self.tableView reloadData];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.tableView reloadData];
+                });
+           
             }
             else{
+                
                 [self.temporaryStoryDescriptions setObject:responseDictionary forKey:itemNumber];
                 
                 if([self.temporaryStoryDescriptions count] == [self.temporaryTop100StoriesIds count] - [self.numberOfFailedNewStoryDescriptions integerValue]){
@@ -87,11 +106,25 @@
                         self.storiesHaveBeenReloaded = NO;
                     }
                     
-                    [self.tableView reloadData];
+                    [self.timer invalidate];
+                    self.timer = nil;
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        MenuViewController *menuViewController = (MenuViewController *)self.revealViewController.rightViewController;
+                        [menuViewController didChangeStoryType];
+                        
+                        if([self.shouldScrollToTop boolValue]){
+                             [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+                            self.shouldScrollToTop = @0;
+                        }
+                        
+                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+                        [self.tableView reloadData];
+                    });
+                    
                 }
             }
-            
-            
             
         }
         else{
@@ -107,27 +140,44 @@
         
         
     } withCancelBlock:^(NSError *error) {
-        
+   
     }
-     ];
+    ];
 }
 
 - (void)getStoryDescriptionsUsingNewIDs:(BOOL)usingNewIDs{
     
     if(usingNewIDs){
         for(NSNumber *itemNumber in self.temporaryTop100StoriesIds){
-            [self getStoryDataOfItem:itemNumber usingNewIDs:usingNewIDs];
+               [self getStoryDataOfItem:itemNumber usingNewIDs:usingNewIDs];
         }
     }
     else{
         [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"lastRefreshDate"];
         
         for(NSNumber *itemNumber in self.top100StoriesIds){
-            [self getStoryDataOfItem:itemNumber usingNewIDs:usingNewIDs];
+                [self getStoryDataOfItem:itemNumber usingNewIDs:usingNewIDs];
         }
     }
     
 }
+
+- (void)setHNStories{
+    self.storiesURL = @"https://hacker-news.firebaseio.com/v0/topstories";
+}
+
+- (void)setAskHNStories{
+    self.storiesURL = @"https://hacker-news.firebaseio.com/v0/askstories";
+}
+
+- (void)setShowHNStories{
+    self.storiesURL = @"https://hacker-news.firebaseio.com/v0/showstories";
+}
+
+- (void)setJobStories{
+    self.storiesURL = @"https://hacker-news.firebaseio.com/v0/jobstories";
+}
+
 
 - (void)reloadAllData{
     
@@ -137,9 +187,16 @@
     
     if(![ReachabilityManager isReachable]){
         [self.refreshControl endRefreshing];
-       NSString *message = @"The internet connection appears to be offline";
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Something went wrong" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
+        NSString *message = @"The internet connection appears to be offline";
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        self.shouldScrollToTop = @0;
+        
+        if(![self.alertView isVisible]){
+            self.alertView = [[UIAlertView alloc] initWithTitle:@"Something went wrong" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [self.alertView show];
+        }
+        
         return;
     }
 
@@ -148,6 +205,13 @@
     for(Firebase *ref in self.storyEventRefs){
         [ref removeAllObservers];
     }
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0
+                                                  target:self
+                                                selector:@selector(firebaseRequestDidTimeOut:)
+                                                userInfo:nil
+                                                 repeats:NO];
+    
     [self getNewStoryIDs];
 }
 
@@ -176,7 +240,6 @@
     
     self.selectedRow = nil;
 
-    
     // Disable swipe to go back gesture
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
@@ -195,6 +258,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    
+    self.revealViewController.rightViewRevealWidth = 256.0;
+    self.revealViewController.delegate = self;
+    
+    self.storiesURL = @"https://hacker-news.firebaseio.com/v0/topstories";
+    
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    self.menuButton = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth - 6 - 40, 25, 40, 40)];
+    UIImage *image = [UIImage imageNamed:@"menuButton.png"];
+    [self.menuButton setBackgroundImage:image forState:UIControlStateNormal];
+    self.menuButton.clipsToBounds = YES;
+    self.menuButton.layer.cornerRadius = 20;
+    [self.view addSubview:self.menuButton];
+    [self.menuButton addTarget:self
+                        action:@selector(menuButtonPressed)
+              forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.menuButton setHitTestEdgeInsets:UIEdgeInsetsMake(-10.0, -10.0, -10.0, -10.0)];
+    
+    self.tableView.delegate = self;
     
     self.doNotDeselectCell = NO;
     
@@ -222,6 +309,35 @@
                                                  name:UIApplicationWillEnterForegroundNotification
                                                object:nil];
     [Appirater appLaunched:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hideMenuButton:)
+                                                 name:@"HideMenuButton"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showMenuButton:)
+                                                 name:@"ShowMenuButton"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showDeveloperContactDetails:)
+                                                 name:@"ShowDeveloperContactDetails"
+                                               object:nil];
+    
+    
+
+    NSNumber *menuButtonHidden = [[NSUserDefaults standardUserDefaults] objectForKey:@"menuButtonPermanentlyHidden"];
+    
+    if([menuButtonHidden boolValue] == YES ){
+        [self.menuButton setAlpha:0.0];
+    }
+    
+}
+
+- (void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -308,12 +424,37 @@
     }
 }
 
+- (void)hideMenuButton:(NSNotification *)notification
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.menuButton.alpha = 0.0;
+    }];
+}
+
+- (void)showMenuButton:(NSNotification *)notification
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.menuButton.alpha = 1.0;
+    }];
+}
+
+- (void)showDeveloperContactDetails:(NSNotification *)notification{
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    [revealViewController rightRevealToggleAnimated:YES];
+    
+    SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithAddress:@"http://mkmiec.com/hn"];
+  
+    [self presentViewController:webViewController animated:YES completion:NULL];
+}
+
 
 #pragma mark - UITableViewDataSource
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.storyDescriptions count];
+    return MIN([self.storyDescriptions count], 100) ;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -457,6 +598,32 @@
     return 150.0;
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.lastOffsetY = scrollView.contentOffset.y;
+}
+
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+    bool hide = (scrollView.contentOffset.y > self.lastOffsetY);
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        
+        NSNumber *menuButtonHidden = [[NSUserDefaults standardUserDefaults] objectForKey:@"menuButtonPermanentlyHidden"];
+        
+        if([menuButtonHidden boolValue] == YES){
+            self.menuButton.alpha = 0.0;
+        }
+        else{
+            self.menuButton.alpha = !hide;
+        }
+        
+    }];
+    
+}
+
 #pragma mark - Custom methods
 
 - (void)showWebViewAtIndexPath:(NSIndexPath *)indexPath{
@@ -488,6 +655,13 @@
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
+- (void)menuButtonPressed{
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    [revealViewController rightRevealToggleAnimated:YES];
+    
+}
+
 #pragma mark - Utils
 
 - (void)startActivityIndicator{
@@ -498,6 +672,12 @@
 - (void)stopActivityIndicator{
     UIApplication* app = [UIApplication sharedApplication];
     app.networkActivityIndicatorVisible = NO;
+}
+
+- (void)showHUD{
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
 }
 
 #pragma mark - IBAction
@@ -539,10 +719,80 @@
     
     [self.commentNumberViews setObject:commentNumberView forKey:itemNumber];
     
-    
     [self.tableView reloadRowsAtIndexPaths:@[commentCellIndexPath] withRowAnimation:UITableViewRowAnimationNone];
 
 }
+
+#pragma mark - SWRevealViewController Delegate Methods
+
+- (void)revealController:(SWRevealViewController *)revealController willMoveToPosition:(FrontViewPosition)position
+{
+    if (position == FrontViewPositionLeftSide) {      //Menu will open
+        
+        NSNumber *menuButtonHidden = [[NSUserDefaults standardUserDefaults] objectForKey:@"menuButtonPermanentlyHidden"];
+        
+        if([menuButtonHidden boolValue] == NO ){
+            
+            [UIView animateWithDuration:0.5 animations:^{
+                self.menuButton.alpha = 1.0;
+            }];
+            
+        }
+        
+        self.tableView.userInteractionEnabled = NO;
+        
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
+        
+        UIView *statusBarView =  [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 20)];
+        statusBarView.backgroundColor  =  [UIColor blackColor];
+        statusBarView.tag = 56;
+        [self.view addSubview:statusBarView];
+        
+         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+        
+        
+    }
+    else if (position == FrontViewPositionLeft){      //Menu will close
+        self.tableView.userInteractionEnabled = YES;
+        [[self.view viewWithTag:56] removeFromSuperview];
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+    }
+    
+}
+
+
+#pragma mark - NSTimer
+
+-(void)firebaseRequestDidTimeOut:(NSTimer *)timer {
+    
+    [timer invalidate];
+    timer = nil;
+    
+    for(Firebase *ref in self.storyEventRefs){
+        [ref removeAllObservers];
+    }
+    
+    NSString *message;
+    
+    if( [ReachabilityManager isReachable]){
+        message = @"Error has occured fetching data from server";
+    }
+    else{
+        message = @"The internet connection appears to be offline";
+    }
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    self.shouldScrollToTop = @0;
+    
+    if(![self.alertView isVisible]){
+        self.alertView = [[UIAlertView alloc] initWithTitle:@"Something went wrong" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [self.alertView show];
+    }
+    
+    
+}
+
 
 
 

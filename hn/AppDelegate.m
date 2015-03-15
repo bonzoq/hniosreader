@@ -24,7 +24,7 @@
     
     [Appirater setAppId:@"939454231"];
     [Appirater setCustomAlertTitle:@"Rate Hacker News Client"];
-    [Appirater setCustomAlertMessage:@"If you enjoy using this free app, would you mind taking a moment to rate it on the Appstore? It won't take more than a minute. Thanks!"];
+    [Appirater setCustomAlertMessage:@"If you enjoy using this free app, would you mind taking a moment to rate this version on the Appstore? It won't take more than a minute. Thanks!"];
     [Appirater setCustomAlertRateButtonTitle:@"Rate HN Client"];
     [Appirater setDaysUntilPrompt:5];
     [Appirater setUsesUntilPrompt:10];

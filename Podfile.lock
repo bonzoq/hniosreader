@@ -1,20 +1,26 @@
 PODS:
   - Appirater (2.0.4)
-  - Colours (5.5.0)
+  - Colours (5.6.1)
+  - MBProgressHUD (0.9.1)
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core (= 0.2.3)
     - NJKWebViewProgress/ProgressView (= 0.2.3)
   - NJKWebViewProgress/Core (0.2.3)
   - NJKWebViewProgress/ProgressView (0.2.3)
+  - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
   - Appirater
   - Colours
+  - MBProgressHUD (~> 0.9.1)
   - NJKWebViewProgress
+  - SWRevealViewController
 
 SPEC CHECKSUMS:
   Appirater: cbdb7f305562cfde585300bfff86da01ae559deb
-  Colours: 7abeb0fdebe2da3d8bd7305aee0798375f51f5d8
+  Colours: ecbcbb168f7e6190b76b34df1b477c103cb638eb
+  MBProgressHUD: f3747dcbd45a9e855a6b0674550651e0b7ed250c
   NJKWebViewProgress: 721b57080c840c76f70ff6c2dda4f836ee1b27c1
+  SWRevealViewController: f6d80638b8e12323e87ac79562345403a799cb77
 
 COCOAPODS: 0.35.0

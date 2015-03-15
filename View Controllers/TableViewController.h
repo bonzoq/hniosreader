@@ -12,5 +12,17 @@
 
 @property NSMutableArray *top100StoriesIds;
 @property NSMutableDictionary *storyDescriptions;
+@property NSNumber *shouldScrollToTop;
+
+- (void)getStoryDescriptionsUsingNewIDs:(BOOL)usingNewIDs;
+
+- (void)setHNStories;
+- (void)setAskHNStories;
+- (void)setShowHNStories;
+- (void)setJobStories;
+
+- (void)reloadAllData;
+
+- (void)showHUD;
 
 @end
