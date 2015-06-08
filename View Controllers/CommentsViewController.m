@@ -124,7 +124,7 @@
     [super viewDidAppear:animated];
     
     [self.tableView deselectRowAtIndexPath:self.selectedRow animated:YES ];
-    [self.tableView setAllowsSelection:NO];
+    [self.tableView setAllowsSelection:YES];
     self.selectedRow = nil;
     
     // Enable swipe to go back gesture
@@ -248,6 +248,7 @@
     UIView *backgroundColorView = [[UIView alloc] init];
     backgroundColorView.backgroundColor = selectedColor;
     [cell setSelectedBackgroundView:backgroundColorView];
+    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
 
     [cell setNeedsDisplay];
     [cell layoutIfNeeded];
@@ -301,6 +302,7 @@
     [cell.htmlLabel setAttributedText:attributedString];
     [cell.htmlLabel setDelegate:self];
     [cell.htmlLabel setTag:[indexPath item]];
+    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     
     
     NSString *author = [commentDescription objectForKey:@"by"];
@@ -381,6 +383,19 @@
     
     return NO;
 
+}
+
+#pragma mark - Custom methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.selectedRow = indexPath;
+    [self showWebViewAtIndexPath:indexPath];
+}
+
+- (void)showWebViewAtIndexPath:(NSIndexPath *)indexPath{
+    [self.delegate storyWasRead];
+    [self.tableView deselectRowAtIndexPath:self.selectedRow animated:YES];
+    SVWebViewController *webViewController = [[SVWebViewController alloc] initWithAddress:self.url];
+    [self.navigationController pushViewController:webViewController animated:YES];
 }
 
 

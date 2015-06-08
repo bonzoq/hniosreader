@@ -17,10 +17,10 @@ DEPENDENCIES:
   - SWRevealViewController
 
 SPEC CHECKSUMS:
-  Appirater: cbdb7f305562cfde585300bfff86da01ae559deb
-  Colours: ecbcbb168f7e6190b76b34df1b477c103cb638eb
-  MBProgressHUD: f3747dcbd45a9e855a6b0674550651e0b7ed250c
-  NJKWebViewProgress: 721b57080c840c76f70ff6c2dda4f836ee1b27c1
-  SWRevealViewController: f6d80638b8e12323e87ac79562345403a799cb77
+  Appirater: 8783318c36414e8de3ea023443028df94c1b784b
+  Colours: cad6964a7c178253356403d206eef600a3dc59c8
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.37.2

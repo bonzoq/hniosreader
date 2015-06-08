@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CommentsViewControllerDelegate <NSObject>
+
+- (void)storyWasRead;
+
+@end
+
 @interface CommentsViewController : UIViewController
 
 @property NSString *storyTitle;
@@ -18,5 +24,6 @@
 @property NSString *points;
 @property NSString *author;
 @property NSNumber *timePosted;
+@property (nonatomic, weak) id <CommentsViewControllerDelegate> delegate;
 
 @end

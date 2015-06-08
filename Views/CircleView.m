@@ -56,7 +56,7 @@ BOOL startAnimating;
 }
 
 - (void)changeReadStateTo:(BOOL)newState{
-    
+
     newReadState = newState;
 }
 
