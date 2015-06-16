@@ -430,6 +430,7 @@
         viewController.points = self.points;
         viewController.author = self.author;
         viewController.timePosted = self.timePosted;
+        viewController.delegate = self.delegate;
         
         [self.navigationController pushViewController:viewController animated:YES];
     }
