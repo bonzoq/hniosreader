@@ -302,7 +302,7 @@
     [cell.htmlLabel setAttributedText:attributedString];
     [cell.htmlLabel setDelegate:self];
     [cell.htmlLabel setTag:[indexPath item]];
-    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     
     NSString *author = [commentDescription objectForKey:@"by"];
@@ -387,8 +387,10 @@
 
 #pragma mark - Custom methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    self.selectedRow = indexPath;
-    [self showWebViewAtIndexPath:indexPath];
+    if ([indexPath section] == 0 && [indexPath row] == 0){
+        self.selectedRow = indexPath;
+        [self showWebViewAtIndexPath:indexPath];
+    }
 }
 
 - (void)showWebViewAtIndexPath:(NSIndexPath *)indexPath{
