@@ -572,7 +572,7 @@
 
 #pragma mark - UITableViewDelegate
 
-- (void) storySelectedAtIndexPath:(NSIndexPath *)indexPath
+- (void)storySelectedAtIndexPath:(NSIndexPath *)indexPath
 {
     NSNumber *itemNumber = self.top100StoriesIds[[self.selectedRow item]];
     
