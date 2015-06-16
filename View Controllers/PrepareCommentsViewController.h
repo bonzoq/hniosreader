@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommentsViewController.h"
 
 @interface PrepareCommentsViewController : UIViewController
 
@@ -18,5 +19,6 @@
 @property NSString *author;
 @property NSNumber *timePosted;
 @property CGFloat tableCellHeight;
+@property id <CommentsViewControllerDelegate> delegate;
 
 @end

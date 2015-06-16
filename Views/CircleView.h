@@ -25,7 +25,4 @@ IB_DESIGNABLE
 
 @property NSIndexPath *parentCellIndexPath;
 
-//@property BOOL storyWasRead;
-//@property BOOL newReadState;
-
 @end

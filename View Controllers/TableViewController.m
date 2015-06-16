@@ -25,8 +25,9 @@
 #import "UIButton+Extension.h"
 #import "MBProgressHUD.h"
 #import "MenuViewController.h"
+#import "CommentsViewController.h"
 
-@interface TableViewController () <UITableViewDataSource, UITableViewDelegate, SWRevealViewControllerDelegate>
+@interface TableViewController () <UITableViewDataSource, UITableViewDelegate, SWRevealViewControllerDelegate, CommentsViewControllerDelegate>
 
 @property NSIndexPath *selectedRow;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -401,6 +402,7 @@
         viewController.author = [storyDescription objectForKey:@"by"];
         viewController.timePosted = [storyDescription objectForKey:@"time"];
         viewController.tableCellHeight = tableCellHeight;
+        viewController.delegate = self;
     
         self.selectedRow = indexPath;
         
@@ -570,9 +572,8 @@
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)storySelectedAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.selectedRow = indexPath;
     NSNumber *itemNumber = self.top100StoriesIds[[self.selectedRow item]];
     
     if([[DataStore sharedManager] getReadStateForStoryId:itemNumber] == NO){
@@ -583,7 +584,12 @@
     CircleView *commentNumberView = [self.commentNumberViews objectForKey:itemNumber];
     [commentNumberView changeReadStateTo:YES];
     [self.commentNumberViews setObject:commentNumberView forKey:itemNumber];
-    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedRow = indexPath;
+    [self storySelectedAtIndexPath:indexPath];
     [self showWebViewAtIndexPath:indexPath];
 }
 
@@ -704,7 +710,6 @@
 #pragma mark - UIGestureRecognizer
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
-    
     CircleView *commentNumberView = (CircleView *)recognizer.view;
     NSIndexPath *commentCellIndexPath = commentNumberView.parentCellIndexPath;
     NSNumber *itemNumber = self.top100StoriesIds[[commentCellIndexPath item]];
@@ -721,6 +726,13 @@
     
     [self.tableView reloadRowsAtIndexPaths:@[commentCellIndexPath] withRowAnimation:UITableViewRowAnimationNone];
 
+}
+
+#pragma mark - CommentsViewController Delegate Methods
+
+- (void)storyWasRead
+{
+    [self storySelectedAtIndexPath:self.selectedRow];
 }
 
 #pragma mark - SWRevealViewController Delegate Methods

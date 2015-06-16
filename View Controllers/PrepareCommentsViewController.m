@@ -162,6 +162,7 @@
     viewController.points = self.points;
     viewController.timePosted = self.timePosted;
     viewController.author = self.author;
+    viewController.delegate = self.delegate;
     
     //push viewController removing self from the navigation stack
     NSMutableArray *viewControllers = [NSMutableArray arrayWithArray: self.navigationController.viewControllers];
