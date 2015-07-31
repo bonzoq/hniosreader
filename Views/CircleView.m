@@ -69,6 +69,23 @@ BOOL startAnimating;
         newReadState = wasRead;
         viewBeingAnimated = NO;
         startAnimating = NO;
+        
+        backgroundLayer = [CAShapeLayer new];
+        backgroundLayer.fillColor = self.color.CGColor;
+        [self.layer addSublayer:backgroundLayer];
+        
+        ringLayer = [CAShapeLayer new];
+        ringLayer.frame = backgroundLayer.frame;
+        ringLayer.strokeColor = self.color.CGColor;
+        ringLayer.lineWidth = 1;
+        ringLayer.fillColor = [UIColor clearColor].CGColor;
+        [self.layer addSublayer:ringLayer];
+        
+        numberLabel = [[UILabel alloc] initWithFrame:self.layer.bounds];
+        numberLabel.text = [NSString stringWithFormat:@"%@", self.commentNumber];
+        numberLabel.textAlignment = NSTextAlignmentCenter;
+        numberLabel.font = [UIFont fontWithName:@"Helvetica" size:12];
+        [self addSubview:numberLabel];
     }
    return self;
 }
@@ -79,15 +96,6 @@ BOOL startAnimating;
 }
 
 - (void)drawViewFilled:(BOOL)filled{
-
-    
-    [self.layer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
-    
-    backgroundLayer = [CAShapeLayer new];
-    backgroundLayer.fillColor = self.color.CGColor;
-    
-    //backgroundLayer.frame = self.frame;
-    
     
     
     UIBezierPath *aPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
@@ -95,37 +103,16 @@ BOOL startAnimating;
                                                      startAngle:0.0
                                                        endAngle:DEGREES_TO_RADIANS(360)
                                                       clockwise:YES];
-
     backgroundLayer.path = aPath.CGPath;
-    
-    
-    [self.layer addSublayer:backgroundLayer];
-    
-    ringLayer = [CAShapeLayer new];
     
     UIBezierPath *bPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
                                                          radius:self.frame.size.width/2 - 1
                                                      startAngle:0.0
                                                        endAngle:DEGREES_TO_RADIANS(360)
                                                       clockwise:YES];
-    
-    ringLayer.frame = backgroundLayer.frame;
     ringLayer.path = bPath.CGPath;
-    ringLayer.strokeColor = self.color.CGColor;
-    ringLayer.lineWidth = 1;
-    ringLayer.fillColor = [UIColor clearColor].CGColor;
     
-    [self.layer addSublayer:ringLayer];
-    
-    
-    numberLabel = [[UILabel alloc] initWithFrame:self.layer.bounds];
-    numberLabel.text = [NSString stringWithFormat:@"%@", self.commentNumber];
     numberLabel.textColor = filled ? [UIColor whiteColor]: self.color;
-    numberLabel.textAlignment = NSTextAlignmentCenter;
-    numberLabel.font = [UIFont fontWithName:@"Helvetica" size:12];
-    
-    [self addSubview:numberLabel];
- 
 }
 
 
