@@ -425,43 +425,43 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="155"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Created:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ6-05-1PS">
-                                            <rect key="frame" x="20" y="82" width="67" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Created:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ6-05-1PS">
+                                            <rect key="frame" x="20" y="83" width="65.5" height="20"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gu-5g-BdG">
-                                            <rect key="frame" x="20" y="135" width="50" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gu-5g-BdG">
+                                            <rect key="frame" x="20" y="135" width="49.5" height="20"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUl-Yu-wLN">
-                                            <rect key="frame" x="91" y="82" width="416" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUl-Yu-wLN">
+                                            <rect key="frame" x="89" y="83" width="44.5" height="20"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCi-b6-Kc0">
-                                            <rect key="frame" x="20" y="56" width="84" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCi-b6-Kc0">
+                                            <rect key="frame" x="20" y="57" width="83.5" height="20"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8my-UD-Avb">
-                                            <rect key="frame" x="85" y="109" width="216" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8my-UD-Avb">
+                                            <rect key="frame" x="79" y="109" width="44.5" height="20"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Karma:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3b-t5-gzs">
-                                            <rect key="frame" x="20" y="109" width="61" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Karma:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3b-t5-gzs">
+                                            <rect key="frame" x="20" y="109" width="55" height="20"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEh-Tm-dU8">
-                                            <rect key="frame" x="112" y="56" width="448" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEh-Tm-dU8">
+                                            <rect key="frame" x="112" y="57" width="44.5" height="20"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -472,17 +472,17 @@
                                         <constraint firstItem="lUl-Yu-wLN" firstAttribute="leading" secondItem="RZ6-05-1PS" secondAttribute="trailing" constant="4" id="9J5-zk-qUR"/>
                                         <constraint firstItem="X3b-t5-gzs" firstAttribute="top" secondItem="RZ6-05-1PS" secondAttribute="bottom" constant="6" id="9w2-XY-ekz"/>
                                         <constraint firstItem="vEh-Tm-dU8" firstAttribute="leading" secondItem="sCi-b6-Kc0" secondAttribute="trailing" constant="8" id="A0C-LG-Vgc"/>
-                                        <constraint firstItem="8Gu-5g-BdG" firstAttribute="top" secondItem="X3b-t5-gzs" secondAttribute="bottom" constant="5" id="CwU-cx-JJW"/>
+                                        <constraint firstItem="8Gu-5g-BdG" firstAttribute="top" secondItem="X3b-t5-gzs" secondAttribute="bottom" constant="6" id="CwU-cx-JJW"/>
                                         <constraint firstItem="RZ6-05-1PS" firstAttribute="leading" secondItem="M71-9b-CuO" secondAttribute="leading" constant="20" id="FC8-Ua-8Zh"/>
-                                        <constraint firstItem="lUl-Yu-wLN" firstAttribute="top" secondItem="sCi-b6-Kc0" secondAttribute="bottom" constant="5" id="LjU-kz-czm"/>
+                                        <constraint firstItem="lUl-Yu-wLN" firstAttribute="top" secondItem="sCi-b6-Kc0" secondAttribute="bottom" constant="6" id="LjU-kz-czm"/>
                                         <constraint firstItem="8Gu-5g-BdG" firstAttribute="leading" secondItem="M71-9b-CuO" secondAttribute="leading" constant="20" id="NcW-Nk-sSx"/>
                                         <constraint firstItem="sCi-b6-Kc0" firstAttribute="leading" secondItem="M71-9b-CuO" secondAttribute="leading" constant="20" id="SFI-lF-cW7"/>
                                         <constraint firstItem="X3b-t5-gzs" firstAttribute="leading" secondItem="M71-9b-CuO" secondAttribute="leading" constant="20" id="W7o-Wy-2JQ"/>
                                         <constraint firstItem="8my-UD-Avb" firstAttribute="top" secondItem="lUl-Yu-wLN" secondAttribute="bottom" constant="6" id="fBR-pn-LAc"/>
-                                        <constraint firstItem="sCi-b6-Kc0" firstAttribute="top" secondItem="M71-9b-CuO" secondAttribute="top" constant="56" id="gsN-FG-QwH"/>
-                                        <constraint firstItem="RZ6-05-1PS" firstAttribute="top" secondItem="sCi-b6-Kc0" secondAttribute="bottom" constant="5" id="iXs-dL-EDC"/>
+                                        <constraint firstItem="sCi-b6-Kc0" firstAttribute="top" secondItem="M71-9b-CuO" secondAttribute="top" constant="57" id="gsN-FG-QwH"/>
+                                        <constraint firstItem="RZ6-05-1PS" firstAttribute="top" secondItem="sCi-b6-Kc0" secondAttribute="bottom" constant="6" id="iXs-dL-EDC"/>
                                         <constraint firstItem="8my-UD-Avb" firstAttribute="leading" secondItem="X3b-t5-gzs" secondAttribute="trailing" constant="4" id="kRy-IX-jMz"/>
-                                        <constraint firstItem="vEh-Tm-dU8" firstAttribute="top" secondItem="M71-9b-CuO" secondAttribute="top" constant="56" id="xmJ-Ns-SzJ"/>
+                                        <constraint firstItem="vEh-Tm-dU8" firstAttribute="top" secondItem="M71-9b-CuO" secondAttribute="top" constant="57" id="xmJ-Ns-SzJ"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
