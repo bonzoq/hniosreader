@@ -353,6 +353,7 @@
                                         <connections>
                                             <outlet property="commentNumberLabel" destination="PZ7-mA-CGn" id="lky-Gm-TRn"/>
                                             <outlet property="commentsButton" destination="9xm-Ar-Yo2" id="NU4-du-g4S"/>
+                                            <outlet property="distanceConstraint" destination="V2o-K0-wot" id="cjA-8W-018"/>
                                             <outlet property="domainLabel" destination="VrP-Wh-nEv" id="gXB-cl-LXh"/>
                                             <outlet property="hoursAgoLabel" destination="tP3-0h-dpV" id="wmn-iC-6FE"/>
                                             <outlet property="pointsLabel" destination="9XB-IP-NN9" id="Fhg-nc-tCm"/>
