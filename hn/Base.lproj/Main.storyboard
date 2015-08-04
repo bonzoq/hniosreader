@@ -24,8 +24,8 @@
                                     <constraint firstAttribute="height" constant="20" id="jRb-Dz-6bn"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gb7-ht-QAm">
-                                <rect key="frame" x="289" y="115" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gb7-ht-QAm">
+                                <rect key="frame" x="290" y="115" width="20" height="20"/>
                                 <color key="color" red="0.3060141683" green="0.16830779260000001" blue="0.34120579769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
