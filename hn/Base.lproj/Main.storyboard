@@ -1013,24 +1013,6 @@
             </objects>
             <point key="canvasLocation" x="1475" y="249"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="7N5-9h-whg">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vMh-Z5-DUT" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="g6a-5E-HmH"/>
-                        <viewControllerLayoutGuide type="bottom" id="HcV-RY-CpT"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Rmm-td-fmp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fG7-lP-6I5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="8le-2Q-YXs"/>
