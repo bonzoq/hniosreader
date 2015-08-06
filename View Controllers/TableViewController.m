@@ -484,7 +484,7 @@
     
     NSString *url = [storyDescription objectForKey:@"url"];
     NSString *urlDomain = [url extractDomain];
-    if(urlDomain == nil && url != nil){
+    if(urlDomain == nil || [urlDomain isEqualToString:@""]){
         cell.distanceConstraint.constant = 0.0;
     }
     else{
