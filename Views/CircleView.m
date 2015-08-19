@@ -12,17 +12,17 @@
 #define DEGREES_TO_RADIANS(degrees)  ((M_PI * degrees)/ 180)
 
 @implementation CircleView{
-
-CAShapeLayer *backgroundLayer;
-CAShapeLayer *ringLayer;
-CGFloat radius;
-UILabel *numberLabel;
-BOOL storyWasRead;
-BOOL newReadState;
-
-BOOL viewBeingAnimated;
     
-BOOL startAnimating;
+    CAShapeLayer *backgroundLayer;
+    CAShapeLayer *ringLayer;
+    CGFloat radius;
+    UILabel *numberLabel;
+    BOOL storyWasRead;
+    BOOL newReadState;
+    
+    BOOL viewBeingAnimated;
+    
+    BOOL startAnimating;
     
 }
 
@@ -33,7 +33,7 @@ BOOL startAnimating;
 - (void)animateNewReadStateIfNecessary{
     
     if(viewBeingAnimated == NO){
-
+        
         [self drawViewFilled:storyWasRead];
         
         if(storyWasRead != newReadState && startAnimating){
@@ -56,7 +56,7 @@ BOOL startAnimating;
 }
 
 - (void)changeReadStateTo:(BOOL)newState{
-
+    
     newReadState = newState;
 }
 
@@ -87,11 +87,11 @@ BOOL startAnimating;
         numberLabel.font = [UIFont fontWithName:@"Helvetica" size:12];
         [self addSubview:numberLabel];
     }
-   return self;
+    return self;
 }
 
 - (void)drawView{
-   
+    
     [self drawViewFilled:storyWasRead];
 }
 
@@ -118,7 +118,7 @@ BOOL startAnimating;
 
 - (void)animateRadius{
     
-  
+    
     UIBezierPath *aPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
                                                          radius:self.frame.size.width/2
                                                      startAngle:0.0
@@ -171,7 +171,7 @@ BOOL startAnimating;
         startAnimating = NO;
         
     }];
-        
+    
     [backgroundLayer addAnimation:morph forKey:nil];
     [CATransaction commit];
     

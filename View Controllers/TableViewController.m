@@ -43,12 +43,9 @@
 @property BOOL doNotDeselectCell;
 @property UIButton *menuButton;
 @property CGFloat lastOffsetY;
-
 @property NSString *storiesURL;
 @property NSTimer *timer;
-
 @property UIAlertView *alertView;
-
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
@@ -84,14 +81,15 @@
         if([responseDictionary isKindOfClass:[NSDictionary class]] && [responseDictionary objectForKey:@"id"] != nil){
             
             [[DataStore sharedManager] saveStoryIfNotExistsWithId:itemNumber];
-            
             if(usingNewIDs == NO){
                 
                 [self.storyDescriptions setObject:responseDictionary forKey:itemNumber];
                 
-                dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.tableView reloadData];
-                });
+                if([self.storyDescriptions count] == [self.top100StoriesIds count] - [self.numberOfFailedNewStoryDescriptions integerValue]){
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.tableView reloadData];
+                    });
+                }
            
             }
             else{
@@ -301,7 +299,7 @@
     
     [self.tableView addSubview:self.refreshControl];
     
-    [self getStoryDescriptionsUsingNewIDs:NO];
+    //[self getStoryDescriptionsUsingNewIDs:NO];
     
     self.storiesHaveBeenReloaded = NO;
     
@@ -501,7 +499,6 @@
     [cell.commentsButton setTag:[itemNumber longValue]];
     cell.commentsButton.tag2 = index;
    
-    
     UIColor *color = [RandomColor getRandomColorForNumber:[author hash]];
     
     [cell.userNameButton setTitleColor:color forState:UIControlStateNormal];
@@ -523,10 +520,9 @@
     CircleView *commentNumberView;
     
     commentNumberView = [self.commentNumberViews objectForKey:itemNumber];
-    
     if(commentNumberView == nil){
         commentNumberView = [[CircleView alloc] initWithFrame:cell.commentNumberLabel.frame CommentNumber:[NSNumber numberWithLong:index+1] color:color andWasRead:storyWasRead];
-        
+    
         UITapGestureRecognizer *singleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
         [commentNumberView addGestureRecognizer:singleTapRecognizer];
     }
@@ -540,7 +536,6 @@
     [cell.contentView addSubview:commentNumberView];
     
     [commentNumberView animateNewReadStateIfNecessary];
-
 
     return cell;
 }

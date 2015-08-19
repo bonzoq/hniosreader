@@ -154,7 +154,7 @@
     
     self.veryFirstDate = [NSDate date];
     
-    self.numberOfStoriesToLoad = [NSNumber numberWithInteger:6];
+    self.numberOfStoriesToLoad = [NSNumber numberWithInteger:100];
     
     self.storyDescriptions = [NSMutableDictionary new];
     

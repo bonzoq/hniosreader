@@ -18,8 +18,6 @@
     
     mainViewController.top100StoriesIds = self.top100StoriesIds;
     mainViewController.storyDescriptions = self.storyDescriptions;
-    
-    [mainViewController getStoryDescriptionsUsingNewIDs:NO];
 }
 
 @end
