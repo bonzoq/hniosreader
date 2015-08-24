@@ -57,7 +57,7 @@
     // Return the number of rows in the section.
     
     if(section == 0){
-        return 4;
+        return 5;
     }
 
     return 1;
@@ -96,8 +96,11 @@
     else if(rowNumber == 2){
         cell.menuItemLabel.text = @"Show Hacker News";
     }
-    else{
+    else if(rowNumber == 3){
         cell.menuItemLabel.text = @"Jobs";
+    }
+    else{
+        cell.menuItemLabel.text = @"Best stories";
     }
     
     
@@ -144,8 +147,11 @@
     else if(rowNumber == 2){
         [frontViewController setShowHNStories];
     }
-    else{
+    else if(rowNumber == 3){
         [frontViewController setJobStories];
+    }
+    else{
+        [frontViewController setBestStories];
     }
     
     self.rowToBeHighlighted = [NSNumber numberWithInteger:rowNumber];

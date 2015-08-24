@@ -20,6 +20,7 @@
 - (void)setAskHNStories;
 - (void)setShowHNStories;
 - (void)setJobStories;
+- (void)setBestStories;
 
 - (void)reloadAllData;
 

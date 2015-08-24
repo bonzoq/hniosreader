@@ -177,6 +177,10 @@
     self.storiesURL = @"https://hacker-news.firebaseio.com/v0/jobstories";
 }
 
+- (void)setBestStories{
+    self.storiesURL = @"https://hacker-news.firebaseio.com/v0/beststories";
+}
+
 
 - (void)reloadAllData{
     
