@@ -154,7 +154,7 @@
                                                 <action selector="menuIconVisibilitySwitchValueChanged:" destination="8TI-1G-wWt" eventType="valueChanged" id="RXG-hk-PRa"/>
                                             </connections>
                                         </switch>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Menu Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50l-zm-uTE">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Menu Button" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50l-zm-uTE">
                                             <rect key="frame" x="380" y="12" width="137" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="saL-J8-tGZ"/>
