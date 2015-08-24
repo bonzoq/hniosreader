@@ -194,6 +194,8 @@
         offset = 168.0;
     }
     
+    offset -= 44.0;
+    
     return 278.0 + offset;
 }
 
