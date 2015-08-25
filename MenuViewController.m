@@ -100,7 +100,7 @@
         cell.menuItemLabel.text = @"Jobs";
     }
     else{
-        cell.menuItemLabel.text = @"Best stories";
+        cell.menuItemLabel.text = @"Best Stories";
     }
     
     
