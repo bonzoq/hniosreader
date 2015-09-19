@@ -11,6 +11,7 @@
 #import "SVWebViewController.h"
 #import <Firebase/Firebase.h>
 #import "Appirater.h"
+#import <BuddyBuildSDK/BuddyBuildSDK.h>
 
 @interface AppDelegate ()
 
@@ -20,6 +21,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [BuddyBuildSDK setup];
+    
     // Override point for customization after application launch.
     
     [Appirater setAppId:@"939454231"];
