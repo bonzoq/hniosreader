@@ -14,7 +14,6 @@
 		B80ACBA01A59FAA3007DC58C /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = B80ACB9F1A59FAA3007DC58C /* Story.m */; };
 		B80FB6D119E988F800CE7A21 /* PrepareCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80FB6D019E988F800CE7A21 /* PrepareCommentsViewController.m */; };
 		B83E26C51A03F65200B14C30 /* ProfileViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B83E26C41A03F65200B14C30 /* ProfileViewCell.m */; };
-		B83E51451AAFA61900417CF8 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83E51441AAFA61900417CF8 /* Firebase.framework */; };
 		B855F11E1A0E5881006014AD /* ReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B855F11D1A0E5881006014AD /* ReachabilityManager.m */; };
 		B866190E1A0517530064976C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B866190D1A0517530064976C /* Reachability.m */; };
 		B87E256719F6D2F4000773A2 /* PrepareProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B87E256619F6D2F4000773A2 /* PrepareProfileViewController.m */; };
@@ -63,8 +62,6 @@
 		D35334A419E544DF0060B70D /* hnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D35334A319E544DF0060B70D /* hnTests.m */; };
 		D35334AF19E546900060B70D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35334AE19E546900060B70D /* TableViewController.m */; };
 		D35334B219E546D80060B70D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35334B019E546D80060B70D /* Main.storyboard */; };
-		D35334B619E547DB0060B70D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D35334B519E547DB0060B70D /* libicucore.dylib */; };
-		D35334B819E547E50060B70D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D35334B719E547E50060B70D /* libc++.dylib */; };
 		D35334BA19E547ED0060B70D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35334B919E547ED0060B70D /* CFNetwork.framework */; };
 		D35334BC19E547F30060B70D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35334BB19E547F30060B70D /* Security.framework */; };
 		D35334BE19E547FB0060B70D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35334BD19E547FB0060B70D /* SystemConfiguration.framework */; };
@@ -112,7 +109,6 @@
 		B80FB6D019E988F800CE7A21 /* PrepareCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrepareCommentsViewController.m; path = "View Controllers/PrepareCommentsViewController.m"; sourceTree = "<group>"; };
 		B83E26C31A03F65200B14C30 /* ProfileViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewCell.h; path = Views/ProfileViewCell.h; sourceTree = "<group>"; };
 		B83E26C41A03F65200B14C30 /* ProfileViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewCell.m; path = Views/ProfileViewCell.m; sourceTree = "<group>"; };
-		B83E51441AAFA61900417CF8 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		B855F11C1A0E5881006014AD /* ReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReachabilityManager.h; path = Utils/Reachability/ReachabilityManager.h; sourceTree = "<group>"; };
 		B855F11D1A0E5881006014AD /* ReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReachabilityManager.m; path = Utils/Reachability/ReachabilityManager.m; sourceTree = "<group>"; };
 		B866190C1A0517530064976C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Utils/Reachability/Reachability.h; sourceTree = "<group>"; };
@@ -191,8 +187,6 @@
 		D35334AD19E546900060B70D /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewController.h; path = "View Controllers/TableViewController.h"; sourceTree = "<group>"; };
 		D35334AE19E546900060B70D /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewController.m; path = "View Controllers/TableViewController.m"; sourceTree = "<group>"; };
 		D35334B119E546D80060B70D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D35334B519E547DB0060B70D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		D35334B719E547E50060B70D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		D35334B919E547ED0060B70D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D35334BB19E547F30060B70D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D35334BD19E547FB0060B70D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -235,9 +229,6 @@
 				D35334BE19E547FB0060B70D /* SystemConfiguration.framework in Frameworks */,
 				D35334BC19E547F30060B70D /* Security.framework in Frameworks */,
 				D35334BA19E547ED0060B70D /* CFNetwork.framework in Frameworks */,
-				B83E51451AAFA61900417CF8 /* Firebase.framework in Frameworks */,
-				D35334B819E547E50060B70D /* libc++.dylib in Frameworks */,
-				D35334B619E547DB0060B70D /* libicucore.dylib in Frameworks */,
 				F323E55FD2E34BFA8DBE8609 /* libPods.a in Frameworks */,
 				7BF7236DBB6F8DECF07BE6F7 /* BuddyBuildSDK.framework in Frameworks */,
 				A2BBE965BF22085A4F5BA310 /* AssetsLibrary.framework in Frameworks */,
@@ -259,12 +250,9 @@
 		3CCBC95BC1F04744BEDD8C89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B83E51441AAFA61900417CF8 /* Firebase.framework */,
 				D35334BD19E547FB0060B70D /* SystemConfiguration.framework */,
 				D35334BB19E547F30060B70D /* Security.framework */,
 				D35334B919E547ED0060B70D /* CFNetwork.framework */,
-				D35334B719E547E50060B70D /* libc++.dylib */,
-				D35334B519E547DB0060B70D /* libicucore.dylib */,
 				7571192AB6564A6EA5F9166D /* libPods.a */,
 				B01E96B3A79F28B404E5C7A9 /* BuddyBuildSDK.framework */,
 				BD1FC0EBF17F4736BDCFA467 /* AssetsLibrary.framework */,

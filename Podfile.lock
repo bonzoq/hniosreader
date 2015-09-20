@@ -1,6 +1,7 @@
 PODS:
   - Appirater (2.0.4)
   - Colours (5.6.1)
+  - Firebase (2.3.3)
   - MBProgressHUD (0.9.1)
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core (= 0.2.3)
@@ -12,6 +13,7 @@ PODS:
 DEPENDENCIES:
   - Appirater
   - Colours
+  - Firebase
   - MBProgressHUD (~> 0.9.1)
   - NJKWebViewProgress
   - SWRevealViewController
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Appirater: 8783318c36414e8de3ea023443028df94c1b784b
   Colours: cad6964a7c178253356403d206eef600a3dc59c8
+  Firebase: 2db60272f68ce40c7d47e5ae6eddc16977c65d4c
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
