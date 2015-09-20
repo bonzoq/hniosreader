@@ -37,7 +37,6 @@
     
     [ReachabilityManager sharedManager];
     
-    
     return YES;
 }
 

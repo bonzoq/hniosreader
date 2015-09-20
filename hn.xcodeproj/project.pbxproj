@@ -904,7 +904,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = hn;
-				PROVISIONING_PROFILE = "a300a6bd-9134-4b4a-8b8e-2794601d04ff";
+				PROVISIONING_PROFILE = "70c67d35-7484-4383-ab54-156d88aa1a47";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -929,7 +929,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = hn;
-				PROVISIONING_PROFILE = "a300a6bd-9134-4b4a-8b8e-2794601d04ff";
+				PROVISIONING_PROFILE = "70c67d35-7484-4383-ab54-156d88aa1a47";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
