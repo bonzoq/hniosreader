@@ -901,7 +901,7 @@
 			baseConfigurationReference = 7A18F70820EDFA133FF4A3EF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Marcin Kmiec (3S4YF97FHD)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Marcin Kmiec (Y79WZCMF5D)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/hn",
@@ -915,7 +915,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = hn;
-				PROVISIONING_PROFILE = "4fc97763-c9ca-44f0-8080-35bb5879ffc3";
+				PROVISIONING_PROFILE = "a300a6bd-9134-4b4a-8b8e-2794601d04ff";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -925,7 +925,7 @@
 			baseConfigurationReference = CE9D1F71A24EDB448C82F3CD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Marcin Kmiec (3S4YF97FHD)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Marcin Kmiec (Y79WZCMF5D)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/hn",
@@ -939,7 +939,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = hn;
-				PROVISIONING_PROFILE = "4fc97763-c9ca-44f0-8080-35bb5879ffc3";
+				PROVISIONING_PROFILE = "a300a6bd-9134-4b4a-8b8e-2794601d04ff";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
