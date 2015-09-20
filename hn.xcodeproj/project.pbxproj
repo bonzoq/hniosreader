@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01B379F5A934F5A695FE4EBE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D73468330AC5A1C4998148 /* CoreTelephony.framework */; };
+		7BF7236DBB6F8DECF07BE6F7 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E96B3A79F28B404E5C7A9 /* BuddyBuildSDK.framework */; };
+		A2BBE965BF22085A4F5BA310 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1FC0EBF17F4736BDCFA467 /* AssetsLibrary.framework */; };
 		B80AAB6B19F96B5100B6A895 /* RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B80AAB6A19F96B5100B6A895 /* RandomColor.m */; };
 		B80ACBA01A59FAA3007DC58C /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = B80ACB9F1A59FAA3007DC58C /* Story.m */; };
 		B80FB6D119E988F800CE7A21 /* PrepareCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80FB6D019E988F800CE7A21 /* PrepareCommentsViewController.m */; };
@@ -81,6 +84,7 @@
 		D3FD0DD619E5732E00DE43E5 /* SVWebViewControllerActivitySafari.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FD0DC619E5732E00DE43E5 /* SVWebViewControllerActivitySafari.m */; };
 		D3FD0DD719E5732E00DE43E5 /* SVWebViewControllerActivitySafari@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FD0DC719E5732E00DE43E5 /* SVWebViewControllerActivitySafari@2x.png */; };
 		D3FD0DD819E5732E00DE43E5 /* SVWebViewControllerActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FD0DC919E5732E00DE43E5 /* SVWebViewControllerActivity.m */; };
+		F0F8F9D5A235E8B8841EDAD3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C92DDFA69BAF80A92B93D6C /* CoreText.framework */; };
 		F323E55FD2E34BFA8DBE8609 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571192AB6564A6EA5F9166D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -95,8 +99,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06D73468330AC5A1C4998148 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		0C92DDFA69BAF80A92B93D6C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		7571192AB6564A6EA5F9166D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A18F70820EDFA133FF4A3EF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B01E96B3A79F28B404E5C7A9 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		B80AAB6919F96B5100B6A895 /* RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomColor.h; path = Utils/RandomColor.h; sourceTree = "<group>"; };
 		B80AAB6A19F96B5100B6A895 /* RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RandomColor.m; path = Utils/RandomColor.m; sourceTree = "<group>"; };
 		B80ACB9E1A59FAA3007DC58C /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Story.h; path = "Core Data/Story.h"; sourceTree = "<group>"; };
@@ -165,6 +172,7 @@
 		B8EE1B3C19E8551B004267EA /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentTableViewCell.m; path = Views/CommentTableViewCell.m; sourceTree = "<group>"; };
 		B8F52FC519E884DA00C7F640 /* labelVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = labelVIew.h; path = Views/labelVIew.h; sourceTree = "<group>"; };
 		B8F52FC619E884DA00C7F640 /* labelVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = labelVIew.m; path = Views/labelVIew.m; sourceTree = "<group>"; };
+		BD1FC0EBF17F4736BDCFA467 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		CE9D1F71A24EDB448C82F3CD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D3305AA91A0A7B620063B3A0 /* NSString+RemoveTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RemoveTag.h"; path = "Categories/NSString+RemoveTag.h"; sourceTree = "<group>"; };
 		D3305AAA1A0A7B620063B3A0 /* NSString+RemoveTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+RemoveTag.m"; path = "Categories/NSString+RemoveTag.m"; sourceTree = "<group>"; };
@@ -231,6 +239,10 @@
 				D35334B819E547E50060B70D /* libc++.dylib in Frameworks */,
 				D35334B619E547DB0060B70D /* libicucore.dylib in Frameworks */,
 				F323E55FD2E34BFA8DBE8609 /* libPods.a in Frameworks */,
+				7BF7236DBB6F8DECF07BE6F7 /* BuddyBuildSDK.framework in Frameworks */,
+				A2BBE965BF22085A4F5BA310 /* AssetsLibrary.framework in Frameworks */,
+				F0F8F9D5A235E8B8841EDAD3 /* CoreText.framework in Frameworks */,
+				01B379F5A934F5A695FE4EBE /* CoreTelephony.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +266,10 @@
 				D35334B719E547E50060B70D /* libc++.dylib */,
 				D35334B519E547DB0060B70D /* libicucore.dylib */,
 				7571192AB6564A6EA5F9166D /* libPods.a */,
+				B01E96B3A79F28B404E5C7A9 /* BuddyBuildSDK.framework */,
+				BD1FC0EBF17F4736BDCFA467 /* AssetsLibrary.framework */,
+				0C92DDFA69BAF80A92B93D6C /* CoreText.framework */,
+				06D73468330AC5A1C4998148 /* CoreTelephony.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
