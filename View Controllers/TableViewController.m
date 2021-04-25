@@ -447,7 +447,7 @@
     SWRevealViewController *revealViewController = self.revealViewController;
     [revealViewController rightRevealToggleAnimated:YES];
     
-    SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithAddress:@"http://mkmiec.com/hn"];
+    SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithAddress:@"https://github.com/Alekseykua"];
   
     [self presentViewController:webViewController animated:YES completion:NULL];
 }
